@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+  <style>
+
+    @font-face {
+    
+    font-family: 'Phosphate';
+    src: url('phosphate.ttf'); 
+    }
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+
+      .bottomBar {
+        height: 50px;
+        background: #000;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .playerWrapper {
+        height: calc(100% - 50px);
+      }
+
+      .player {
+        height: 100%;
+      }
+
+      .socialLinks {
+        position: absolute;
+        left: 50px;
+      }
+      .socialLinks li{
+        display: inline-block;
+        margin: 0 20px;
+       
+      }
+
+      .socialLinks ul {
+        height: 50px;
+        margin: 0;
+        padding: 17px 0
+      }
+
+       .socialLinks li a {
+         color: #FFF;
+         height: 16px;
+       }
+
+      .title {
+            font-family: "Phosphate";
+        color: #FFF;
+        font-size: 28px;
+        /*the font file is messed up so cant do usual vertical centering stuff*/
+        padding-top: 34px;
+        height: 28px;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+      }
+
+     
+
+  </style>
+
+   <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '100%',
+          width: '100%',
+          playerVars: {
+            showinfo: 0,
+            controls: 1,
+            listType: 'playlist',
+            list: 'PLq355A5wo1rZDoYRRRwBy2PyVgsvTcXrO'
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        player.playVideo();
+        setTimeout(function() {player.setShuffle(true)}, 500);
+
+      }
+
+    
+
+
+      
+    </script>
+  </head>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div class="playerWrapper"><div id="player"></div></div>
+    <div class="bottomBar">
+      <div class="socialLinks">
+      <ul>
+        <li><a href="//www.instagram.com/groundfloorcomedy/"><i class="fa fa-instagram fa-lg"></i></a></li>
+        <li><a href="//www.facebook.com/groundfloorcomedy/?fref=ts"><i class="fa fa-facebook fa-lg"></i></a></li>
+        <li><a href="//www.youtube.com/channel/UCtBYvb105_s5EXHBTRSmILg"><i class="fa fa-youtube-play fa-lg"></i></a></li>
+      </ul>
+      </div>
+      <div class="title">GROUND FLOOR</div>
+
+      <!-- <form>
+        <input id="formName" name="email" type="text" />
+        <input class="hiddenInput" name="siteId" value="9xsyt9324nqg9dhonsf29y9lz"`>
+        <button type="button" class="signUpButton" onclick="submitForm">Sign Up</button>
+      </form> -->
+
+      <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+  
+   form {
+        position: absolute;
+        right: 50px;
+        top: 11px;
+        height: 28px;
+        padding: 0 !important;
+      }
+
+      input.email {
+          height: 28px  !important;
+          box-sizing: border-box  !important;
+          width: 200px !important;
+      }
+
+      input.button {
+           background: #9c459a !important;
+          padding: 7px 20px 5px;
+          margin-top: 1px;
+          color: #fff !important;
+          border-radius: 5px;
+          border: none;
+          font-family: Arial;
+          font-weight: bold;
+          font-size: 16px;
+          box-sizing: border-box;
+          height: 28px !important;
+        }
+</style>
+<div id="mc_embed_signup">
+<form action="//everyoneeverywhereallofthetime.us15.list-manage.com/subscribe/post?u=ba0a09ee6956b1ebf1b706b71&amp;id=6baabc9971" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+  
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ba0a09ee6956b1ebf1b706b71_6baabc9971" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+    </div>
+
+  </body>
+</html>
